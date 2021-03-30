@@ -11,3 +11,26 @@
 - $ git push origin main
 
 ### Frontend Setup Card
+
+
+### Testing with Jest and Enzyme
+
+To run tests in a React app:
+`$ yarn test`
+
+Enzyme - testing library; allows shallow rendering: only renders first layer of a component
+
+To add Enzyme to your React App:
+`$ yarn add -D enzyme react-test-renderer enzyme-adapter-react-16`
+
+Syntax for assertion
+`expect(<actualQueried>).<matcher>(<expectedValue>)`
+
+
+Three A's: 
+
+// arrange - set up for the situation, rendering the tested component
+
+// act - user interaction
+
+// assert - expectation of component behavior

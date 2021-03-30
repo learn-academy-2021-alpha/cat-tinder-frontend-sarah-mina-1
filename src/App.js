@@ -14,7 +14,7 @@ import {
 } from 'react-router-dom'
 
 import './App.css'
-import cats from './mockCats.js'
+// import cats from './mockCats.js'
 
 
 class App extends Component {
