@@ -11,7 +11,11 @@
 - $ git push origin main
 
 ### Frontend Setup Card
-
+- added assets, pages, components folder
+- added files for every pages
+- add bootstrap
+- add react-router
+- added mock cats
 
 ### Testing with Jest and Enzyme
 
@@ -27,7 +31,7 @@ Syntax for assertion
 `expect(<actualQueried>).<matcher>(<expectedValue>)`
 
 
-Three A's: 
+Three A's:
 
 // arrange - set up for the situation, rendering the tested component
 
