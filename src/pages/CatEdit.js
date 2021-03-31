@@ -4,7 +4,7 @@ class CatEdit extends Component {
   render() {
     return (
       <>
-        edit
+        <h1>Edit</h1>
       </>
     )
   }
