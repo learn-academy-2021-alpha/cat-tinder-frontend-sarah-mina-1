@@ -38,3 +38,7 @@ Three A's:
 // act - user interaction
 
 // assert - expectation of component behavior
+
+
+### Read Functionality 
+Read functionality is concerned with just displaying information: CatIndex, CatShow
