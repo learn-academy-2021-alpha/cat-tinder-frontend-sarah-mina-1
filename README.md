@@ -42,3 +42,14 @@ Three A's:
 
 ### Read Functionality 
 Read functionality is concerned with just displaying information: CatIndex, CatShow
+
+To use dynamic rendering on routes: use attribute `render` instead of `component`.
+`render` takes a function that should return a component
+
+In order to access URL params, use React-Route `match` object on `props`
+e.g. `props.match.params.<:url_param>`
+Documentation: [https://reactrouter.com/web/api/match](https://reactrouter.com/web/api/match
+)
+
+React's "key" prop warning: use a unique identifier to help React determine which items need to be rerendered
+
