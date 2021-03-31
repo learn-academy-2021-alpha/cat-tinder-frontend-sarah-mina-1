@@ -9,7 +9,7 @@ describe('When CatShow renders', () => {
   it('displays Show heading', () => {
     const catShow = shallow(<CatShow/>);
 
-    const showHeading = catShow.find('h1');
+    const showHeading = catShow.find('h2');
 
     expect(showHeading.text()).toEqual('Show');
   });

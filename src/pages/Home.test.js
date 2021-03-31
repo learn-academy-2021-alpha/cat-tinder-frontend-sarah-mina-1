@@ -9,8 +9,8 @@ describe('When Home renders', () => {
   it('displays Home heading', () => {
     const home = shallow(<Home />);
 
-    const homeHeading = home.find('h1');
+    const homeHeading = home.find('h3');
 
-    expect(homeHeading.text()).toEqual('Home');
+    expect(homeHeading.text()).toEqual("It's like Tinder but for cats.");
   });
 });

@@ -9,7 +9,7 @@ describe('When CatNew renders', () => {
   it('displays New heading', () => {
     const catNew = shallow(<CatNew />);
 
-    const newHeading = catNew.find('h1');
+    const newHeading = catNew.find('h2');
 
     expect(newHeading.text()).toEqual('New');
   });

@@ -9,8 +9,8 @@ describe('When NotFound renders', () => {
   it('displays Oops heading', () => {
     const notFound = shallow(<NotFound />);
 
-    const oopsHeading = notFound.find('h1');
+    const oopsHeading = notFound.find('h3');
 
-    expect(oopsHeading.text()).toEqual('Oops');
+    expect(oopsHeading.text()).toEqual('Looks like something went wrong.');
   });
 });

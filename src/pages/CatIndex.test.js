@@ -9,7 +9,7 @@ describe('When CatIndex renders', () => {
   it('displays Index heading', () => {
     const catIndex = shallow(<CatIndex />);
 
-    const indexHeading = catIndex.find('h1');
+    const indexHeading = catIndex.find('h2');
 
     expect(indexHeading.text()).toEqual('Index');
   });

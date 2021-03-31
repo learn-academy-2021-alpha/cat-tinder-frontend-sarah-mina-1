@@ -6,11 +6,10 @@ import Footer from './Footer';
 Enzyme.configure({ adapter: new Adapter()})
 
 describe('When Footer renders', () => {
-  it('displays Footer heading', () => {
-    const footer = shallow(<Footer />);
-
-    const footerHeading = footer.find('h1');
-
-    expect(footerHeading.text()).toEqual('Footer');
-  });
+  const footer = shallow(<Footer />);
+  const footerNav = footer.find('Nav');
+  
+  it('has clickable links', () => {
+    expect(footerNav.length).toEqual(1);
+  })
 });
