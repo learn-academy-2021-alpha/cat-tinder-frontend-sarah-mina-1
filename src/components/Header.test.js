@@ -14,12 +14,10 @@ import Header from './Header'
 Enzyme.configure({ adapter: new Adapter() })
 
 describe('When Header loads', () => {
+  const header = shallow(<Header/>);
+  const hamburger = header.find('NavbarToggler');
 
   it('displays a hamburger icon and the menu is collapsed', () => {
-    const header = shallow(<Header/>);
-
-    const hamburger = header.find('NavbarToggler');
-
     expect(hamburger.length).toEqual(1);
 
     const collapsedComponent = header.find('Collapse');
@@ -27,11 +25,6 @@ describe('When Header loads', () => {
   })
 
   it('expands the menu when hamburger icon is clicked', () => {
-    // arrange
-    const header = shallow(<Header/>);
-
-    // act
-    const hamburger = header.find('NavbarToggler');
     hamburger.simulate('click');
 
     // assert
