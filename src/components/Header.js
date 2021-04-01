@@ -18,10 +18,10 @@ const Header = () => {
             <Collapse isOpen={!collapsed} navbar>
               <Nav navbar>
                 <NavItem>
-                  <NavLink href="/components/">Components</NavLink>
+                  <NavLink href="/catindex">Meet the Cats</NavLink>
                 </NavItem>
                 <NavItem>
-                  <NavLink href="https://github.com/reactstrap/reactstrap">GitHub</NavLink>
+                  <NavLink href="/catnew">Add a Cat</NavLink>
                 </NavItem>
               </Nav>
             </Collapse>
