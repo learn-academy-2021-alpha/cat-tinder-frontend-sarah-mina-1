@@ -1,16 +1,26 @@
 import React, { Component } from 'react'
+import { Button, Card, CardTitle, CardText, Col } from 'reactstrap'
+import { NavLink } from 'react-router-dom'
 
-class CatShow extends Component {
-  render() {
-    const cat = this.props.cat;
-    console.log(cat)
-    return (
+class CatShow extends Component{
+  render(){
+    return(
       <>
-        <h2>Show</h2>
-
-        <div>Name: {cat.name}</div>
-        <div>Age: {cat.age}</div>
-        <div>Enjoys: {cat.enjoys}</div>
+        <Col sm="6" className="show-body">
+          <Card body >
+            <CardTitle>
+              Hi, my name is { this.props.cat.name }!
+            </CardTitle>
+            <CardText>
+              I am { this.props.cat.age } years old. I enjoy { this.props.cat.enjoys }.
+            </CardText>
+            <NavLink to={ `/catedit/${this.props.cat.id}` }>
+              <Button color="secondary">
+                Edit Cat Profile
+              </Button>
+            </NavLink>
+          </Card>
+        </Col>
       </>
     )
   }

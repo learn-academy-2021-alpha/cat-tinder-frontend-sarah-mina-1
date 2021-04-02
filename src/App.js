@@ -26,7 +26,12 @@ class App extends Component {
   }
 
   createNewCat = (newcat) => {
-    console.log(newcat)
+    console.log("newcat:", newcat)
+  }
+
+  updateCat = (cat, id) => {
+    console.log("cat:", cat)
+    console.log("id:", id)
   }
 
   render() {
@@ -34,29 +39,50 @@ class App extends Component {
       <Router>
         <Header />
         <Switch>
+
+          {/* HOME */}
           <Route exact path="/" component={ Home } />
+
+          {/* INDEX */}
+          {/* Static route --> <Route path="/catindex" component={ CatIndex } /> */}
           <Route
             path="/catindex"
-            render = { () => <CatIndex cats={this.state.cats}/> }
+            render={ (props) => <CatIndex cats={ this.state.cats } /> }
           />
-          {/* <Route path="/catindex" component = { CatIndex } /> */}
 
-          {/* <Route path="/catshow" component = { CatShow } /> */}
-          <Route path="/catshow/:id" render = {(props) => {
+          {/* SHOW */}
+          {/* Static route --> <Route path="/catshow" component={ CatShow } /> */}
+          <Route path="/catshow/:id" render={(props) => {
             // get the id from the URL
-            // const id = parseInt(props.match.params.id);
-            const id = +props.match.params.id;
+            // const id = parseInt(props.match.params.id)
+            const id = +props.match.params.id
             // find the cat from mockData with the id
-            const foundKitty = this.state.cats.find(cat => cat.id === id);
+            const foundKitty = this.state.cats.find(cat => cat.id === id)
             // pass that cat into CatShow as propData
-            return <CatShow cat={foundKitty}/>}
+            return <CatShow cat={ foundKitty } /> }
           } />
-          <Route path="/catnew" render={(props) => {
-            return <CatNew createNewCat={ this.createNewCat } />
-          }}
+
+          {/* NEW */}
+          <Route
+            path="/catnew"
+            render={ (props) => <CatNew createNewCat={ this.createNewCat } /> }
           />
-          <Route path="/catedit" component = { CatEdit } />
-          <Route component = { NotFound } />
+
+          {/* EDIT */}
+          <Route
+            exact path={"/catedit/:id"}
+            render={ (props) => {
+              const id = +props.match.params.id
+              const cat = this.state.cats.find(cat => cat.id === id)
+              return(
+                <CatEdit
+                  updateCat={ this.updateCat }
+                  cat={ cat }
+                />
+              )
+            }}
+          />
+          <Route component={ NotFound } />
         </Switch>
         <Footer />
       </Router>

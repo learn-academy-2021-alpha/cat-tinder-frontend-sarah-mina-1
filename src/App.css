@@ -14,7 +14,7 @@
   height: 75vh;
 }
 .home-pic{
-  width: 200px;
+  width: 300px;
 }
 
 /* HEADER */
@@ -39,10 +39,17 @@ a{
   flex-direction: row-reverse;
 }
 
+/* SHOW */
+.show-body{
+  display: flex;
+  text-align: center;
+  margin: 0 auto;
+}
+
 /* FOOTER */
 footer{
-  font-size: 12px;
-  margin-top: 3rem;
+  font-size: 20px;
+  margin-top: 4rem;
   position: fixed;
   bottom: 0;
   width: 100%;
