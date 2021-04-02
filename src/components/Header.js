@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
-import { Jumbotron, Container } from 'reactstrap'
-import { Collapse, Navbar, NavbarToggler, Nav, NavItem, NavLink } from 'reactstrap'
+import { Jumbotron, Container, Collapse, Navbar, NavbarToggler, Nav, NavItem } from 'reactstrap'
+import { NavLink } from 'react-router-dom'
 import catlogo from '../assets/cat-tinder.png'
 
 const Header = () => {
@@ -18,10 +18,11 @@ const Header = () => {
             <Collapse isOpen={!collapsed} navbar>
               <Nav navbar>
                 <NavItem>
-                  <NavLink href="/catindex">Meet the Cats</NavLink>
+                  <NavLink to="/catindex">Meet the Cats</NavLink>
                 </NavItem>
+                <br />
                 <NavItem>
-                  <NavLink href="/catnew">Add a Cat</NavLink>
+                  <NavLink to="/catnew">Add a Cat</NavLink>
                 </NavItem>
               </Nav>
             </Collapse>

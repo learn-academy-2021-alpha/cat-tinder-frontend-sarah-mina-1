@@ -10,13 +10,13 @@ class Footer extends Component{
             <span className="nav-link">&copy; 2021 Sarah & Mina</span>
           </NavItem>
           <NavItem>
-            <NavLink href="/">Home</NavLink>
+            <NavLink to="/">Home</NavLink>
           </NavItem>
           <NavItem>
-            <NavLink href="/catindex">Meet the Cats</NavLink>
+            <NavLink to="/catindex">Meet the Cats</NavLink>
           </NavItem>
           <NavItem>
-            <NavLink href="/catnew">Add a Cat</NavLink>
+            <NavLink to="/catnew">Add a Cat</NavLink>
           </NavItem>
         </Nav>
       </footer>

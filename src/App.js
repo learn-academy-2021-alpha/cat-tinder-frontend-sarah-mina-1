@@ -87,6 +87,27 @@ class App extends Component {
     })
   }
 
+  deleteCat = (id) => {
+    fetch(`http://localhost:3000/cats/${id}`, {
+      headers: {
+        "Content-Type": "application/json"
+      },
+      method: "DELETE"
+    })
+    .then(response => {
+      if(response.status === 422){
+        alert("Something is wrong with your submission.")
+      }
+      return response.json()
+    })
+    .then(payload => {
+      this.catIndex()
+    })
+    .catch(errors => {
+      console.log("delete errors:", errors)
+    })
+  }
+
   render() {
     return (
       <Router>
@@ -112,7 +133,7 @@ class App extends Component {
             // find the cat from mockData with the id
             const foundKitty = this.state.cats.find(cat => cat.id === id)
             // pass that cat into CatShow as propData
-            return <CatShow cat={ foundKitty } /> }
+            return <CatShow cat={ foundKitty } deleteCat={ this.deleteCat } /> }
           } />
 
           {/* NEW */}

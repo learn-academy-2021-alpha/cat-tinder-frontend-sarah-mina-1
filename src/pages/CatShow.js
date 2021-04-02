@@ -19,6 +19,11 @@ class CatShow extends Component{
                 Edit Cat Profile
               </Button>
             </NavLink>
+            <NavLink to={"/catindex"}>
+              <Button color="secondary" onClick={ () => this.props.deleteCat(this.props.cat.id) }>
+                Delete Cat Profile
+              </Button>
+            </NavLink>
           </Card>
         </Col>
       </>
