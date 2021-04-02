@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { NavLink } from 'react-router-dom'
 
 class CatIndex extends Component {
   render() {
@@ -9,7 +10,7 @@ class CatIndex extends Component {
           {this.props.cats.map(cat => {
             return (
               <li key={cat.id}>
-                <a href={`/catshow/${cat.id}`}>{cat.name}</a>
+                <NavLink to={`/catshow/${cat.id}`}>{cat.name}</NavLink>
               </li>
             )
           })}

@@ -14,24 +14,77 @@ import {
 } from 'react-router-dom'
 
 import './App.css'
-import cats from './mockCats.js'
+// import cats from './mockCats.js'
 
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      cats: cats
+      cats: []
     }
   }
 
-  createNewCat = (newcat) => {
-    console.log("newcat:", newcat)
+  componentDidMount(){
+    this.catIndex()
   }
 
-  updateCat = (cat, id) => {
-    console.log("cat:", cat)
-    console.log("id:", id)
+  catIndex = () => {
+    fetch("http://localhost:3000/cats")
+    .then(response => {
+      return response.json()
+    })
+    .then(catsArray => {
+      console.log(catsArray)
+      this.setState({ cats: catsArray })
+    })
+    .catch(errors => {
+      console.log("index errors:", errors)
+    })
+  }
+
+  createNewCat = (newCat) => {
+    fetch("http://localhost:3000/cats", {
+      body: JSON.stringify(newCat),
+      headers: {
+        "Content-Type": "application/json"
+      },
+      method: "POST"
+    })
+    .then(response => {
+      if(response.status === 422){
+        alert("Something is wrong with your submission.")
+      }
+      return response.json()
+    })
+    .then(payload => {
+      this.catIndex()
+    })
+    .catch(errors => {
+      console.log("create errors:", errors)
+    })
+  }
+
+  updateCat = (editedCat, id) => {
+    fetch(`http://localhost:3000/cats/${id}`, {
+      body: JSON.stringify(editedCat),
+      headers: {
+        "Content-Type": "application/json"
+      },
+      method: "PATCH"
+    })
+    .then(response => {
+      if(response.status === 422){
+        alert("Something is wrong with your submission.")
+      }
+      return response.json()
+    })
+    .then(payload => {
+      this.catIndex()
+    })
+    .catch(errors => {
+      console.log("update errors:", errors)
+    })
   }
 
   render() {
